@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Rudy's Gardens</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .page-hero {
+            position: relative;
+            padding: 160px 0 100px 0;
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+        .page-hero-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            opacity: 0.15;
+            background-image: url('assets/modern_landscaped_garden.png');
+            background-size: cover;
+            background-position: center;
+        }
+        .page-hero .container {
+            position: relative;
+            z-index: 1;
+        }
+        .page-hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+        .about-text h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 24px;
+        }
+        .about-text p {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            line-height: 1.8;
+        }
+        .stat-card {
+            padding: 40px 24px;
+            background: white;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+        .stat-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+        .stat-card-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        .stat-card h4 {
+            color: var(--primary);
+            font-size: 1.25rem;
+        }
+        .special-box {
+            background: var(--bg-light);
+            padding: 48px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border);
+        }
+        .special-box h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        .special-box p {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            font-size: 1.125rem;
+            line-height: 1.8;
+        }
+        .core-services {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .service-pill {
+            padding: 20px 40px;
+            background: var(--accent);
+            color: var(--primary);
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.2rem;
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: var(--transition);
+        }
+        .service-pill:hover {
+            transform: translateY(-5px);
+            background: var(--primary);
+            color: white;
+            box-shadow: var(--shadow-md);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container navbar">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.png" alt="Rudy's Gardens Logo">
+            </a>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="portfolio.html">Our Portfolio</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="contact.html" class="btn btn-primary">Contact Us</a>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Hero Section -->
+    <section class="page-hero">
+        <video autoplay muted loop playsinline class="hero-bg-video" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
+            <source src="assets/animate.mp4" type="video/mp4">
+        </video>
+        <div class="page-hero-overlay" style="background-image: none; background-color: rgba(0, 0, 0, 0.5); opacity: 1; z-index: 1;"></div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <span class="badge fade-up">Who Are We</span>
+            <h1 class="fade-up delay-1">About Us</h1>
+            <p class="fade-up delay-2" style="font-size: 1.25rem; max-width: 600px; margin: 0 auto; color: rgba(255, 255, 255, 0.9);">Your trusted partner in creating and maintaining stunning outdoor spaces.</p>
+        </div>
+    </section>
+
+    <!-- Main About Content -->
+    <section class="about-main section-padding" style="background-color: var(--bg-main);">
+        <div class="container">
+            <div class="why-us-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;">
+                <div class="about-text reveal">
+                    <span class="subtitle">Our Story</span>
+                    <h2>Transforming Outdoor Spaces</h2>
+                    <p>
+                        At Rudy’s Gardens, we believe that your outdoor space should be an extension of your home—a place where you can relax, entertain, and enjoy the beauty of nature. With years of experience in landscaping and home improvement, our team is committed to bringing your vision to life.
+                    </p>
+                    <p>
+                        At Rudy’s Gardens, we take pride in transforming outdoor spaces into lush, vibrant, and inviting environments. Whether you have a residential property or a commercial space that needs a touch of nature’s beauty, we’re here to make it happen. With our expertise in landscaping, gardening, and comprehensive property maintenance services, we turn your vision into reality.
+                    </p>
+                </div>
+                <div class="about-image reveal delay-1" style="position: relative;">
+                    <img src="assets/modern_landscaped_garden.png" alt="Rudy's Gardens Team" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); width: 100%; height: auto; object-fit: cover; aspect-ratio: 4/3;">
+                    <div class="floating-card glass" style="bottom: -30px; right: -30px; top: auto; left: auto; animation: float 7s ease-in-out infinite alternate;">
+                        <div class="floating-icon">🌱</div>
+                        <p><strong>Nature's Beauty</strong><br>In your backyard</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats/Features -->
+    <section class="about-stats section-padding bg-light">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px; text-align: center;">
+                <div class="stat-card reveal">
+                    <div class="stat-card-icon">🏆</div>
+                    <h4>Experienced Company</h4>
+                </div>
+                <div class="stat-card reveal delay-1">
+                    <div class="stat-card-icon">⭐</div>
+                    <h4>Quality Job</h4>
+                </div>
+                <div class="stat-card reveal delay-2">
+                    <div class="stat-card-icon">🤝</div>
+                    <h4>Dependable Services</h4>
+                </div>
+                <div class="stat-card reveal delay-3">
+                    <div class="stat-card-icon">🏅</div>
+                    <h4>Reputable Company</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Info -->
+    <section class="about-special section-padding" style="background-color: white;">
+        <div class="container">
+            <div class="section-heading text-center reveal">
+                <span class="subtitle">Our Expertise</span>
+                <h2 style="font-size: 2.5rem;">What makes us special</h2>
+            </div>
+            
+            <div class="special-content" style="max-width: 800px; margin: 0 auto; margin-top: 56px;">
+                <div class="special-box reveal">
+                    <h3>Design & Planting</h3>
+                    <p>
+                        We were originally a landscape design and installation company. These valuable landscape roots have given us valuable insight into the needs of garden centers and landscapers as we have transformed and grown our business through the years.
+                    </p>
+                    <p style="margin-bottom: 0;">
+                        We have created an environment dedicated to doing things efficiently in all of our operations. This means understanding how to grow and produce a mature plant that is the highest quality at the lowest cost. We listen to the marketplace and continually adjust our operations, support and business strategies to meet an ever-changing business environment. Our customers have told us they want the highest quality plant material at a good price value. Customers want a high level of customer service and support.
+                    </p>
+                </div>
+                
+                <h3 style="color: var(--primary); margin-top: 56px; margin-bottom: 32px; text-align: center; font-size: 2rem;" class="reveal">Our Core Services</h3>
+                <div class="core-services reveal delay-1">
+                    <div class="service-pill">
+                        <span style="font-size: 1.5rem;">💧</span> Irrigation & Drainage
+                    </div>
+                    <div class="service-pill">
+                        <span style="font-size: 1.5rem;">✂️</span> Lawn Service
+                    </div>
+                    <div class="service-pill">
+                        <span style="font-size: 1.5rem;">🌻</span> Garden Care
+                    </div>
+                    <div class="service-pill">
+                        <span style="font-size: 1.5rem;">🏡</span> Residential Services
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Footer Section -->
+    <footer class="footer" id="contact" style="padding-top: 0;">
+        <div class="container footer-cta reveal" style="margin-top: 0; transform: translateY(-50px);">
+            <div class="cta-content">
+                <h2>For All Your Landscape, Contractor, and Gardening Needs</h2>
+                <p>Contact us today to schedule a consultation, and let’s embark on a journey to elevate your property’s beauty and functionality.</p>
+            </div>
+            <div class="cta-action">
+                <a href="#" class="btn btn-secondary btn-large popup-trigger">Contact Us Now</a>
+            </div>
+        </div>
+
+        <div class="container footer-main mt-5">
+            <div class="footer-grid">
+                <div class="footer-col brand-col reveal">
+                    <a href="index.html" class="footer-logo">
+                        <img src="assets/logo.png" alt="Rudy's Gardens">
+                    </a>
+                    <p>Your trusted partner in creating and maintaining stunning outdoor spaces and improving the interior of your property.</p>
+                </div>
+                
+                <div class="footer-col align-col reveal delay-1">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="#">Watering Garden</a></li>
+                        <li><a href="#">Tree Cleaning</a></li>
+                        <li><a href="#">Rubbish Removal</a></li>
+                        <li><a href="#">Planting Tree</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col align-col reveal delay-2">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li>📍 Owings Mills, Maryland 21117</li>
+                        <li>✉️ info@rudysgarden.com</li>
+                        <li>📞 443 762 5056</li>
+                        <li>✅ Certified Experts</li>
+                        <li>🕒 24/7 Support Center</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col form-col reveal delay-3" id="contact-form">
+                    <h4>Your Feedback & Inquiry</h4>
+                    <form action="#" class="contact-form">
+                        <input type="email" placeholder="Your Email" required>
+                        <textarea rows="3" placeholder="Your Message" required></textarea>
+                        <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container text-center">
+                <p>&copy; 2026 Rudy’s Gardens. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main Script -->
+    <script src="script.js"></script>
+
+    <!-- Lead Generation Popup -->
+    <div class="popup-overlay" id="leadPopup">
+        <div class="popup-modal">
+            <button class="popup-close" id="closePopup">&times;</button>
+            <div class="popup-content">
+                <h3>Get a Free Consultation</h3>
+                <p>Enter your details below and we'll get back to you with a special offer for your gardening and landscaping needs.</p>
+                <form id="leadForm" class="contact-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <input type="tel" placeholder="Your Phone Number" required>
+                    <input type="text" placeholder="Your City" required>
+                    <button type="submit" class="btn btn-primary w-100">Get My Free Quote</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

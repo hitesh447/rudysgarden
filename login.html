@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login | Rudy's Gardens</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .login-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--light-bg);
+            padding: 40px 20px;
+        }
+        .login-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            padding: 40px;
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+        }
+        .login-card img {
+            max-width: 150px;
+            margin-bottom: 30px;
+        }
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            text-align: left;
+        }
+        .login-form input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+        }
+        .login-form input:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+        }
+        .error-msg {
+            color: #d9534f;
+            font-size: 0.9rem;
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <section class="login-section">
+        <div class="login-card fade-up">
+            <a href="index.html"><img src="assets/logo.png" alt="Rudy's Gardens"></a>
+            <h2 style="margin-bottom: 25px;">Admin Login</h2>
+            
+            <form id="loginForm" class="login-form">
+                <div>
+                    <label for="username" style="display:block; margin-bottom: 5px; font-weight: 500;">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div>
+                    <label for="password" style="display:block; margin-bottom: 5px; font-weight: 500;">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div id="errorMsg" class="error-msg"></div>
+                <button type="submit" class="btn btn-primary w-100" style="margin-top: 10px;">Login to Dashboard</button>
+            </form>
+            <div style="margin-top: 20px;">
+                <a href="index.html" style="color: var(--dark-green); text-decoration: underline; font-size: 0.9rem;">&larr; Back to Website</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const errorMsg = document.getElementById('errorMsg');
+            
+            try {
+                const response = await fetch('api/login.php', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    window.location.href = 'dashboard.php';
+                } else {
+                    errorMsg.textContent = data.message;
+                    errorMsg.style.display = 'block';
+                }
+            } catch (err) {
+                errorMsg.textContent = 'An error occurred. Please try again.';
+                errorMsg.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>

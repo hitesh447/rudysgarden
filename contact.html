@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Rudy's Gardens</title>
+    <meta name="description" content="Get in touch with Rudy's Gardens for all your landscaping, gardening, and outdoor maintenance needs. We're here to help transform your outdoor space.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ── Page Hero ── */
+        .page-hero {
+            position: relative;
+            padding: 160px 0 100px;
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+        .page-hero-overlay {
+            position: absolute;
+            inset: 0;
+            opacity: 0.12;
+            background-image: url('assets/modern_landscaped_garden.png');
+            background-size: cover;
+            background-position: center;
+        }
+        .page-hero .container { position: relative; z-index: 1; }
+        .page-hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 20px; }
+        .page-hero p { font-size: 1.2rem; color: rgba(255,255,255,0.85); max-width: 560px; margin: 0 auto; }
+
+        /* ── Contact Section ── */
+        .contact-section {
+            background-color: var(--bg-light);
+            padding: 100px 0 120px;
+        }
+
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 56px;
+            align-items: start;
+        }
+
+        /* ── Left: Form Panel ── */
+        .contact-form-panel {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: 52px 48px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border);
+        }
+        .contact-form-panel .panel-label {
+            color: var(--primary);
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-size: 0.875rem;
+            display: block;
+            margin-bottom: 12px;
+        }
+        .contact-form-panel h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+        .contact-form-panel .panel-desc {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 36px;
+            line-height: 1.7;
+        }
+
+        /* Form overrides for light background */
+        .contact-page-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .form-group label {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text-main);
+            letter-spacing: 0.3px;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 13px 16px;
+            border-radius: var(--radius-sm);
+            border: 1.5px solid var(--border);
+            background: var(--bg-light);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            outline: none;
+        }
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #adb5bd;
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary);
+            background: white;
+            box-shadow: 0 0 0 4px rgba(30, 69, 47, 0.08);
+        }
+        .form-group textarea { resize: vertical; min-height: 130px; }
+        .form-group select { cursor: pointer; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%234b5563' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 40px; }
+        .btn-submit {
+            background-color: var(--primary);
+            color: white;
+            padding: 15px 32px;
+            border-radius: var(--radius-sm);
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            border: none;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            letter-spacing: 0.3px;
+        }
+        .btn-submit:hover {
+            background-color: var(--primary-light);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        .btn-submit svg { width: 18px; height: 18px; }
+
+        /* ── Right: Info Panel ── */
+        .contact-info-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .info-header .panel-label {
+            color: var(--primary);
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-size: 0.875rem;
+            display: block;
+            margin-bottom: 12px;
+        }
+        .info-header h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+        .info-header p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        /* Info Cards */
+        .info-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .info-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            background: white;
+            border-radius: var(--radius-md);
+            padding: 24px 28px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+        .info-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary);
+        }
+        .info-card-icon {
+            width: 52px;
+            height: 52px;
+            background: var(--accent);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            transition: var(--transition);
+        }
+        .info-card:hover .info-card-icon {
+            background: var(--primary);
+        }
+        .info-card-body h4 {
+            font-size: 1rem;
+            color: var(--primary);
+            margin-bottom: 6px;
+        }
+        .info-card-body p,
+        .info-card-body a {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+        .info-card-body a:hover { color: var(--primary); }
+
+        /* Hours box */
+        .hours-box {
+            background: var(--primary);
+            border-radius: var(--radius-md);
+            padding: 28px 32px;
+            color: white;
+        }
+        .hours-box h4 {
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .hours-row {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding: 10px 0;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.85);
+        }
+        .hours-row:last-child { border-bottom: none; }
+        .hours-row span:last-child { font-weight: 600; color: white; }
+
+        /* Map embed placeholder */
+        .map-wrapper {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+            height: 220px;
+            background: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .map-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+
+        /* ── Success Toast ── */
+        .toast {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            background: var(--primary);
+            color: white;
+            padding: 16px 28px;
+            border-radius: var(--radius-md);
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 9999;
+            transform: translateY(120px);
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .toast.show { transform: translateY(0); opacity: 1; }
+        .toast-icon { font-size: 1.4rem; }
+
+        /* ── Responsive ── */
+        @media (max-width: 1024px) {
+            .contact-layout { grid-template-columns: 1fr; gap: 48px; }
+            .contact-form-panel { padding: 40px 32px; }
+        }
+        @media (max-width: 600px) {
+            .form-row { grid-template-columns: 1fr; }
+            .contact-form-panel { padding: 32px 20px; }
+            .contact-form-panel h2, .info-header h2 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ─── Header ─── -->
+    <header class="header">
+        <div class="container navbar">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.png" alt="Rudy's Gardens Logo">
+            </a>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="portfolio.html">Our Portfolio</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="contact.html" style="color: var(--primary); font-weight: 700;">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="contact.html" class="btn btn-primary">Contact Us</a>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ─── Page Hero ─── -->
+    <section class="page-hero">
+        <div class="page-hero-overlay"></div>
+        <div class="container">
+            <span class="badge fade-up">We'd Love to Hear From You</span>
+            <h1 class="fade-up delay-1">Contact Us</h1>
+            <p class="fade-up delay-2">Have a project in mind or just want to say hello? Reach out and our team will get back to you within 24 hours.</p>
+        </div>
+    </section>
+
+    <!-- ─── Contact Section ─── -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-layout">
+
+                <!-- Left: Contact Form -->
+                <div class="contact-form-panel reveal">
+                    <span class="panel-label">Send Us a Message</span>
+                    <h2>Get a Free Quote</h2>
+                    <p class="panel-desc">Fill out the form below and one of our landscaping experts will reach out to discuss your project and offer a free estimate.</p>
+
+                    <form id="contactPageForm" class="contact-page-form" novalidate>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" name="firstName" placeholder="John" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" name="lastName" placeholder="Doe" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" placeholder="(443) 000-0000">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="service">Service Interested In</label>
+                            <select id="service" name="service" required>
+                                <option value="" disabled selected>Select a service…</option>
+                                <option value="landscaping">Landscaping Design</option>
+                                <option value="lawn">Lawn Care & Maintenance</option>
+                                <option value="irrigation">Irrigation & Drainage</option>
+                                <option value="garden">Garden Care</option>
+                                <option value="residential">Residential Services</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="city">Your City / Location</label>
+                            <input type="text" id="city" name="city" placeholder="e.g. Owings Mills, MD">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your project, timeline, budget or any questions you have…" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-submit" id="submitBtn">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Right: Contact Info -->
+                <div class="contact-info-panel">
+                    <div class="info-header reveal delay-1">
+                        <span class="panel-label">Our Details</span>
+                        <h2>Let's Connect</h2>
+                        <p>We're based in Owings Mills, Maryland and serve the surrounding areas. Don't hesitate to reach out — we're always happy to talk about your outdoor space.</p>
+                    </div>
+
+                    <div class="info-cards">
+                        <div class="info-card reveal delay-1">
+                            <div class="info-card-icon">📍</div>
+                            <div class="info-card-body">
+                                <h4>Our Location</h4>
+                                <p>Owings Mills, Maryland 21117<br>Serving the Greater Baltimore Area</p>
+                            </div>
+                        </div>
+
+                        <div class="info-card reveal delay-2">
+                            <div class="info-card-icon">📞</div>
+                            <div class="info-card-body">
+                                <h4>Call Us</h4>
+                                <a href="tel:4437625056">(443) 762-5056</a>
+                                <p style="margin-top:4px; font-size:0.85rem;">Mon – Sat, 7 AM – 6 PM</p>
+                            </div>
+                        </div>
+
+                        <div class="info-card reveal delay-3">
+                            <div class="info-card-icon">✉️</div>
+                            <div class="info-card-body">
+                                <h4>Email Us</h4>
+                                <a href="mailto:info@rudysgarden.com">info@rudysgarden.com</a>
+                                <p style="margin-top:4px; font-size:0.85rem;">We reply within 24 hours</p>
+                            </div>
+                        </div>
+
+                        <div class="info-card reveal delay-4">
+                            <div class="info-card-icon">✅</div>
+                            <div class="info-card-body">
+                                <h4>Certified & Trusted</h4>
+                                <p>Licensed experts with years of experience in landscaping and outdoor care.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Business Hours -->
+                    <div class="hours-box reveal delay-2">
+                        <h4>🕒 Business Hours</h4>
+                        <div class="hours-row"><span>Monday – Friday</span><span>7:00 AM – 6:00 PM</span></div>
+                        <div class="hours-row"><span>Saturday</span><span>8:00 AM – 4:00 PM</span></div>
+                        <div class="hours-row"><span>Sunday</span><span>Closed</span></div>
+                    </div>
+
+                    <!-- Map -->
+                    <div class="map-wrapper reveal delay-3">
+                        <iframe
+                            title="Rudy's Gardens Location – Owings Mills, MD"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24789.15204174!2d-76.80!3d39.41!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c81be3e63b1cef%3A0x4e0d4b7dd3c4c05!2sOwings%20Mills%2C%20MD%2021117!5e0!3m2!1sen!2sus!4v1681234567"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+
+            </div><!-- /.contact-layout -->
+        </div><!-- /.container -->
+    </section>
+
+    <!-- ─── Footer ─── -->
+    <footer class="footer" style="padding-top: 0;">
+        <div class="container footer-cta reveal" style="margin-top: 0; transform: translateY(-50px);">
+            <div class="cta-content">
+                <h2>For All Your Landscape, Contractor, and Gardening Needs</h2>
+                <p>Contact us today to schedule a consultation and let's elevate your property's beauty.</p>
+            </div>
+            <div class="cta-action">
+                <a href="tel:4437625056" class="btn btn-secondary btn-large">📞 Call Now</a>
+            </div>
+        </div>
+
+        <div class="container footer-main mt-5">
+            <div class="footer-grid">
+                <div class="footer-col brand-col reveal">
+                    <a href="index.html" class="footer-logo">
+                        <img src="assets/logo.png" alt="Rudy's Gardens">
+                    </a>
+                    <p>Your trusted partner in creating and maintaining stunning outdoor spaces.</p>
+                </div>
+                <div class="footer-col align-col reveal delay-1">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="#">Watering Garden</a></li>
+                        <li><a href="#">Tree Cleaning</a></li>
+                        <li><a href="#">Rubbish Removal</a></li>
+                        <li><a href="#">Planting Tree</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col align-col reveal delay-2">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li>📍 Owings Mills, Maryland 21117</li>
+                        <li>✉️ info@rudysgarden.com</li>
+                        <li>📞 443 762 5056</li>
+                        <li>✅ Certified Experts</li>
+                        <li>🕒 24/7 Support Center</li>
+                    </ul>
+                </div>
+                <div class="footer-col form-col reveal delay-3">
+                    <h4>Quick Message</h4>
+                    <form action="#" class="contact-form">
+                        <input type="email" placeholder="Your Email" required>
+                        <textarea rows="3" placeholder="Your Message" required></textarea>
+                        <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container text-center">
+                <p>&copy; 2026 Rudy's Gardens. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ─── Toast Notification ─── -->
+    <div class="toast" id="successToast">
+        <span class="toast-icon">🌿</span>
+        <span>Message sent! We'll be in touch within 24 hours.</span>
+    </div>
+
+    <!-- Main Script -->
+    <script src="script.js"></script>
+    <script>
+        // Contact form submission
+        const form = document.getElementById('contactPageForm');
+        const toast = document.getElementById('successToast');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const btn = document.getElementById('submitBtn');
+            btn.textContent = 'Sending…';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                form.reset();
+                btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="width:18px;height:18px"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg> Message Sent!`;
+                btn.style.background = '#2c6344';
+                btn.disabled = false;
+
+                // Show toast
+                toast.classList.add('show');
+                setTimeout(() => toast.classList.remove('show'), 4000);
+
+                // Reset button text after 3s
+                setTimeout(() => {
+                    btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="width:18px;height:18px"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg> Send Message`;
+                    btn.style.background = '';
+                }, 3000);
+            }, 1200);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Portfolio | Rudy's Gardens</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .page-hero {
+            padding: 160px 0 80px;
+            background: linear-gradient(rgba(17, 34, 21, 0.8), rgba(17, 34, 21, 0.9)), url('assets/portfolio/hero.png') center/cover no-repeat;
+            color: white;
+            text-align: center;
+        }
+        .page-hero h1 {
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+        .portfolio-filters {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        .portfolio-filters .btn {
+            border-radius: 30px;
+        }
+        .portfolio-filters .btn.active {
+            background-color: var(--accent-gold);
+            border-color: var(--accent-gold);
+            color: var(--dark-green);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container navbar">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.png" alt="Rudy's Gardens Logo">
+            </a>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="portfolio.html">Our Portfolio</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="contact.html" class="btn btn-primary">Contact Us</a>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-hero">
+        <div class="container">
+            <span class="badge fade-up">Showcase</span>
+            <h1 class="fade-up delay-1">Our Portfolio</h1>
+            <p class="fade-up delay-2" style="max-width: 600px; margin: 0 auto; opacity: 0.9;">Explore our gallery of past projects, showcasing our dedication to premium outdoor transformations, landscape design, and beautiful spaces.</p>
+        </div>
+    </section>
+
+    <!-- Portfolio Gallery Section -->
+    <section class="portfolio section-padding" id="gallery">
+        <div class="container">
+            
+            <div class="portfolio-filters reveal">
+                <button class="btn btn-primary active">All Work</button>
+                <button class="btn btn-outline">Landscaping</button>
+                <button class="btn btn-outline">Hardscape</button>
+                <button class="btn btn-outline">Pools</button>
+            </div>
+
+            <div class="portfolio-grid mt-4" id="dynamicPortfolioGrid">
+                <a href="#" class="portfolio-item reveal filter-landscaping">
+                    <img src="assets/portfolio/landscaping.png" alt="Modern Garden Design">
+                    <div class="portfolio-overlay">
+                        <h3>Modern Garden Design</h3>
+                        <p style="color: white; font-size: 0.9rem; margin-top: 5px;">Landscaping</p>
+                    </div>
+                </a>
+                <a href="#" class="portfolio-item reveal delay-1 filter-hardscape">
+                    <img src="assets/portfolio/hardscape.png" alt="Outdoor Patio Retreat">
+                    <div class="portfolio-overlay">
+                        <h3>Outdoor Patio Retreat</h3>
+                        <p style="color: white; font-size: 0.9rem; margin-top: 5px;">Hardscape</p>
+                    </div>
+                </a>
+                <a href="#" class="portfolio-item reveal delay-2 filter-pools">
+                    <img src="assets/portfolio/pool.png" alt="Luxury Backyard Pool">
+                    <div class="portfolio-overlay">
+                        <h3>Luxury Backyard Pool</h3>
+                        <p style="color: white; font-size: 0.9rem; margin-top: 5px;">Pools</p>
+                    </div>
+                </a>
+                <a href="#" class="portfolio-item reveal filter-landscaping">
+                    <img src="assets/portfolio/flower_garden.png" alt="Seasonal Flower Beds">
+                    <div class="portfolio-overlay">
+                        <h3>Seasonal Flower Beds</h3>
+                        <p style="color: white; font-size: 0.9rem; margin-top: 5px;">Landscaping</p>
+                    </div>
+                </a>
+                <a href="#" class="portfolio-item reveal delay-1 filter-hardscape">
+                    <img src="assets/portfolio/wood_deck.png" alt="Premium Wood Decking">
+                    <div class="portfolio-overlay">
+                        <h3>Premium Wood Decking</h3>
+                        <p style="color: white; font-size: 0.9rem; margin-top: 5px;">Hardscape</p>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="text-center mt-5 reveal">
+                <a href="#" class="btn btn-outline btn-large">Load More Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section section-padding" style="background-color: var(--light-bg);">
+        <div class="container text-center reveal">
+            <h2>Ready to transform your own space?</h2>
+            <p style="max-width: 600px; margin: 15px auto 30px;">Let our team of experts bring your vision to life. Contact us today for a free consultation.</p>
+            <a href="contact.html" class="btn btn-primary btn-large">Get Your Free Quote</a>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer" id="contact">
+        <div class="container footer-main mt-5">
+            <div class="footer-grid">
+                <div class="footer-col brand-col reveal">
+                    <a href="index.html" class="footer-logo">
+                        <img src="assets/logo.png" alt="Rudy's Gardens">
+                    </a>
+                    <p>Your trusted partner in creating and maintaining stunning outdoor spaces and improving the interior of your property.</p>
+                </div>
+                
+                <div class="footer-col align-col reveal delay-1">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="services.html">Watering Garden</a></li>
+                        <li><a href="services.html">Tree Cleaning</a></li>
+                        <li><a href="services.html">Rubbish Removal</a></li>
+                        <li><a href="services.html">Planting Tree</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col align-col reveal delay-2">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li>📍 Owings Mills, Maryland 21117</li>
+                        <li>✉️ info@rudysgarden.com</li>
+                        <li>📞 443 762 5056</li>
+                        <li>✅ Certified Experts</li>
+                        <li>🕒 24/7 Support Center</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col form-col reveal delay-3" id="contact-form">
+                    <h4>Your Feedback & Inquiry</h4>
+                    <form action="#" class="contact-form">
+                        <input type="email" placeholder="Your Email" required>
+                        <textarea rows="3" placeholder="Your Message" required></textarea>
+                        <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container text-center">
+                <p>&copy; 2026 Rudy's Gardens. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main Script -->
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const grid = document.getElementById('dynamicPortfolioGrid');
+            
+            // Simple filter logic for newly loaded elements
+            const filterBtns = document.querySelectorAll('.portfolio-filters .btn');
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    e.target.classList.add('active');
+                    
+                    const filterValue = e.target.textContent.trim().toLowerCase();
+                    const allItems = grid.querySelectorAll('.portfolio-item');
+                    
+                    allItems.forEach(item => {
+                        if (filterValue === 'all work') {
+                            item.style.display = 'block';
+                        } else if (item.classList.contains(`filter-${filterValue}`)) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
